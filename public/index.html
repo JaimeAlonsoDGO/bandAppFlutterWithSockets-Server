@@ -23,8 +23,13 @@
       socket.emit("mensaje", { nombre: "Jaime" });
 
       // Escuchando lo que envie el servidor
-      socket.on("mensaje", function (payload) {
+      socket.on("emitir-mensaje", function (payload) {
         console.log("Mensaje del servidor: ", payload);
+      });
+
+      socket.on("active-bands", function (bands) {
+        console.clear();
+        console.table(bands);
       });
     </script>
   </body>
